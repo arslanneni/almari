@@ -1,33 +1,32 @@
 import React,{useEffect,useState} from 'react'
 import Papa from 'papaparse';
-import ProductCard from '../../src/components/ProductCard'
 import CardComponent from '../../src/components/CardComponent'
 // import {scrappedDataService} from "../../services/dataFetching"
 
-export default function ProductDetail ()  {
+export default function Trousers ()  {
 
 	const [data, setData] = useState([]);
-	const [cardData,setCardData]=useState([]);
+  const [cardData,setCardData]=useState([]);
 
 	const prepareCardData=(data)=>{
+    console.log(data)
 		let productData=[];
 		data.forEach((element,index) => {
 			productData.push({
-				image:'https:'+element.image,
+				image:element.image,
 				title:element.title,
 				description:element.description,
-				price:element.price,
+				price:element.Price,
 			})
 		}); 
 		
-console.log(productData)
 		setCardData(productData);
 	}
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/beechtree.csv'); // Replace with the path to your CSV file
+        const response = await fetch('/IdeasTrousers.csv'); // Replace with the path to your CSV file
         const blob = await response.blob();
         const reader = new FileReader();
 
@@ -36,7 +35,7 @@ console.log(productData)
           // Convert CSV text to JSON
           const jsonData = convertCSVToJson(text);
           setData(jsonData);
-		  prepareCardData(jsonData);
+          prepareCardData(jsonData);
         };
 
         reader.readAsText(blob);
