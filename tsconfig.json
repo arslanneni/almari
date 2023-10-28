@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/Kurta/index.js", "src/components/Hero.js", "src/components/HeaderTop.js", "src/components/HeaderMain.js", "src/components/Footer.js", "src/components/Navbar.js", "src/components/MobNavbar.js"],
   "exclude": ["node_modules"]
 }

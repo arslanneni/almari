@@ -1,11 +1,10 @@
 import React from "react";
 
-const Footer = () => {
+export default function Footer()  {
   return (
     <div className="bg-blackish text-gray-500 text-center py-4 pb-16 md:pb-4">
-      Copyright © Sick <br /> All Rights Reserved 2023.
+      Copyright © Almari.com <br /> All Rights Reserved.
     </div>
   );
 };
 
-export default Footer;

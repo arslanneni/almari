@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Testimonial = () => {
+export default function Testimonial () {
   return (
     <div>
       <div className="container pt-16 pb-16 grid-cols-2">
@@ -11,12 +11,12 @@ const Testimonial = () => {
             <div className="text-center flex flex-col items-center gap-1">
               <Image
                 className="rounded-full inline-block"
-                src="/user.jpg"
+                src="/speed.jpeg"
                 width={80}
                 height={80}
                 alt="dp"
               />
-              <h2 className="text-gray-500 font-black text-[20px]">Elsa Doe</h2>
+              <h2 className="text-gray-500 font-black text-[20px]">Hammad Tahir</h2>
               <p>CEO & Founder Invision</p>
               <Image
                 className="inline-block py-2"
@@ -26,8 +26,7 @@ const Testimonial = () => {
                 alt="quotes"
               />
               <p className="max-w-[200px] text-gray-500">
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor
-                sit amet.
+              {`Fashion is like eating, you shouldn't stick to the same menu.`}
               </p>
             </div>
           </div>
@@ -38,10 +37,10 @@ const Testimonial = () => {
                 25% DISCOUNT
               </button>
               <h2 className="font-extrabold text-2xl text-[#272727]">
-                Summer Collection
+                Winter Collection
               </h2>
               <p className="text-gray-500 text-[20px]">
-                Starting @ $20 <b>Shop Now</b>
+                Starting @ Rs. 2000 <b>Shop Now</b>
               </p>
             </div>
           </div>
@@ -51,4 +50,3 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;

@@ -5,12 +5,12 @@ import { BiUser } from "react-icons/bi";
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-const HeaderMain = () => {
+export default function HeaderMain  ()  {
   return (
     <div className="border-b border-gray-200 py-6">
       <div className="container sm:flex justify-between items-center">
         <div className="font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish">
-          Sick
+          Almari
         </div>
 
         <div className="w-full sm:w-[300px] md:w-[70%] relative">
@@ -48,4 +48,3 @@ const HeaderMain = () => {
   );
 };
 
-export default HeaderMain;

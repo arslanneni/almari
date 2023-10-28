@@ -2,7 +2,7 @@ import React from "react";
 
 import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 
-const HeaderTop = () => {
+export default function HeaderTop  ()  {
   return (
     <div className="border-b border-gray-200 hidden sm:block">
       <div className="container py-4">
@@ -22,9 +22,9 @@ const HeaderTop = () => {
             </div>
           </div>
 
-          <div className="text-gray-500 text-[12px]">
+          {/* <div className="text-gray-500 text-[12px]">
             <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55
-          </div>
+          </div> */}
 
           <div className="flex gap-4">
             <select
@@ -32,9 +32,9 @@ const HeaderTop = () => {
               name="currency"
               id="currency"
             >
+              <option value="PKR">PKR</option>
               <option value="USD $">USD $</option>
-              <option value="EUR €">EUR €</option>
-              <option value="INR">INR</option>
+              
             </select>
 
             <select
@@ -43,7 +43,7 @@ const HeaderTop = () => {
               id="language"
             >
               <option value="English">English</option>
-              <option value="French">French</option>
+              <option value="Urdu">Urdu</option>
             </select>
           </div>
         </div>
@@ -51,5 +51,3 @@ const HeaderTop = () => {
     </div>
   );
 };
-
-export default HeaderTop;

@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import Slide from "./Slide";
 
-const Hero = () => {
+export default function Hero  ()  {
   var settings = {
     dots: true,
     infinite: true,
@@ -20,21 +20,21 @@ const Hero = () => {
       img: "/banner-1.jpg",
       title: "Trending Item",
       mainTitle: "WOMEN'S LATEST FASHION SALE",
-      price: "$20",
+      price: "Rs. 20000 ",
     },
     {
       id: 1,
       img: "/banner-2.jpg",
       title: "Trending Accessories",
       mainTitle: "MODERN SUNGLASSES",
-      price: "$15",
+      price: "Rs. 5000",
     },
     {
       id: 2,
       img: "/banner-3.jpg",
       title: "Sale Offer",
       mainTitle: "NEW FASHION SUMMER SALE",
-      price: "$30",
+      price: "Rs. 3000",
     },
   ];
 
@@ -57,4 +57,3 @@ const Hero = () => {
   );
 };
 
-export default Hero;

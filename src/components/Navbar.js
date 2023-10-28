@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import {scrappedDataService} from "../../services/dataFetching"
 
-const Navbar = () => {
+export default function Navbar  ()  {
+
+
   return (
     <div className="hidden lg:block">
       <div className="container">
@@ -13,19 +16,16 @@ const Navbar = () => {
             CATEGORIES
           </Link>
           <Link className="navbar__link relative" href="#">
-            {`MEN'S`}
+            {`KURTA`}
           </Link>
           <Link className="navbar__link relative" href="#">
-            {`WOMEN'S`}
+            {`SHALWAR`}
+          </Link>
+          <Link className="navbar__link relative" href="#">
+            SHOES
           </Link>
           <Link className="navbar__link relative" href="#">
             JEWELRY
-          </Link>
-          <Link className="navbar__link relative" href="#">
-            PERFUME
-          </Link>
-          <Link className="navbar__link relative" href="#">
-            BLOG
           </Link>
           <Link className="navbar__link relative" href="#">
             HOT OFFERS
@@ -36,4 +36,3 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
