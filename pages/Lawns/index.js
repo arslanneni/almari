@@ -4,7 +4,7 @@ import ProductCard from '../../src/components/ProductCard'
 import CardComponent from '../../src/components/CardComponent'
 // import {scrappedDataService} from "../../services/dataFetching"
 
-export default function ProductDetail ()  {
+export default function Lawns ()  {
 
 	const [data, setData] = useState([]);
 	const [cardData,setCardData]=useState([]);
