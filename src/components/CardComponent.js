@@ -1,30 +1,18 @@
 // components/CardComponent.js
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import CryptoJS from 'crypto-js';
+import PrimaryModal from '../components/productDetailModal'
 
 export default function CardComponent({ data }) {
-	const router = useRouter();
+const [productDetailModal,setProductDetailModal]=useState(false);
 
 	const viewProductDetails = (title,description,price,image) => 
 	{
-		const encryptedTitle = CryptoJS.AES.encrypt(title, 'secret').toString();
-		const encryptedDescription = CryptoJS.AES.encrypt(description, 'secret').toString();
-		const encryptedPrice = CryptoJS.AES.encrypt(price.toString(), 'secret').toString();
-		const encryptedImage=CryptoJS.AES.encrypt(image.toString(), 'secret').toString();
-
-		router.push({
-			pathname: '/productDetails',
-			query: {
-				title: encryptedTitle,
-				description: encryptedDescription,
-				price: encryptedPrice,
-			},
-		});
+		setProductDetailModal(true)
 		
 	}
 	return (
+		<>
 		<div className="card-container">
 			{data.map((item, index) => (
 				<div key={index} className="card">
@@ -91,5 +79,17 @@ export default function CardComponent({ data }) {
 				}
 			`}</style>
 		</div>
+		<PrimaryModal isOpenProp={productDetailModal}>
+        <div style={{ margin: "1rem 15px 2rem 15px", padding: "1rem 12rem" }}>
+          <div className="d-flex justify-content-center">{/* <img src="dist/img/cross-icon.svg" alt="delete icon" /> */}</div>
+          <div className="d-flex justify-content-center mt-4">
+            <h5 className="font-16">Product Details</h5>
+          </div>
+          
+        </div>
+      </PrimaryModal>
+		</>
+		
+		
 	);
 }

@@ -1,55 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap');
+
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: #f5f5f5
+  background: #1f1a25;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.hedding {
-    font-size: 20px;
-    color: #ab8181;
+img {
+  position: fixed;
+  top: -8%;
+  left: 0%;
+  border-radius: 50px;
+  opacity: 0.9;
+  transition: 0.5s;
 }
 
-.main-section {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 5%);
+h1 {
+  transition: transform 2s;
+  font-size: 60px;
+  color: white;
+  font-family: 'Big Shoulders Display', cursive;
 }
 
-.left-side-product-box img {
-    width: 100%;
+.card:hover > p {
+  opacity: 1;
+  transform: scale(1.5);
+  top: 80%;
 }
 
-.left-side-product-box .sub-img img {
-    margin-top: 5px;
-    width: 83px;
-    height: 100px;
+img:hover + .card {
+  /* Use '+' to select the .card immediately following the img */
 }
 
-.right-side-pro-detail span {
-    font-size: 15px;
+img,
+#parent {
+  cursor: pointer;
 }
 
-.right-side-pro-detail p {
-    font-size: 25px;
-    color: #a1a1a1;
+.card:hover > img {
+  opacity: 1;
+  transform: scale(1.4);
 }
 
-.right-side-pro-detail .price-pro {
-    color: #E45641;
+.card header {
+  position: absolute;
+  top: 120%;
+  left: 0%;
+  padding: 1px;
+  border-radius: 25px;
+  width: 450px;
+  height: 90px;
+  transition: all 0.5s;
+  opacity: 0;
 }
 
-.right-side-pro-detail .tag-section {
-    font-size: 18px;
-    color: #5D4C46;
+.card:hover > header {
+  opacity: 1;
+  width: 450px;
+  height: 90px;
+  transform: translateY(-120px);
 }
 
-.pro-box-section .pro-box img {
-    width: 100%;
-    height: 200px;
+.card {
+  transition: transform 0.7s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: white;
+  width: 450px;
+  height: 450px;
 }
 
-@media (min-width:360px) and (max-width:640px) {
-    .pro-box-section .pro-box img {
-        height: auto;
-    }
+.card:hover {
+  transform: scale(1.08);
+}
+
+.centeri {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  position: relative;
 }
