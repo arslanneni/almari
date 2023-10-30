@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import Papa from 'papaparse';
 import CardComponent from '../../src/components/CardComponent'
+import Layout from "../../src/app/layout"
 // import {scrappedDataService} from "../../services/dataFetching"
 
 export default function Trousers ()  {
@@ -9,7 +10,6 @@ export default function Trousers ()  {
   const [cardData,setCardData]=useState([]);
 
 	const prepareCardData=(data)=>{
-    console.log(data)
 		let productData=[];
 		data.forEach((element,index) => {
 			productData.push({
@@ -54,11 +54,10 @@ export default function Trousers ()  {
   };
 
   return (
-        <div>
-            <h1>Welcome to the Card Component</h1>
-            <CardComponent data={cardData} />
-        </div>
+    <Layout>
+      <div>
+          <CardComponent data={cardData} />
+      </div>
+    </Layout>
     );
-  
-  
 };

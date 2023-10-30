@@ -25,18 +25,15 @@ export default function RootLayout({
 }) {
 
  
-    
-
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <main>
         <HeaderTop />
         <HeaderMain />
         <Navbar />
         <MobNavbar />
         {children}
         <Footer />
-      </body>
-    </html>
+      
+    </main>
   );
 }
