@@ -7,8 +7,8 @@ const customStyles = {
       right: "auto",
       bottom: "auto",
       transform: "translate(-50%, -50%)",
-      width: "70%", // Increase the width as needed
-      height: "70vh", // Increase the height as needed (e.g., 70% of the viewport height)
+      width: "80%", // Increase the width as needed
+      height: "90vh", // Increase the height as needed (e.g., 70% of the viewport height)
       padding: "0px",
       overflowY: "auto",
       overflowX: "hidden",
