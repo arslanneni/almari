@@ -103,13 +103,31 @@ export default function CardComponent({ data }) {
 	  `}</style>
 	<PrimaryModal isOpenProp={productDetailModal}>
   <section className="w-screen">
-    <div className="m-4 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-gray-600 shadow-md">
+    <div className="m-5 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-gray-600 shadow-md">
       <div className="relative flex h-full flex-col text-gray-600 md:flex-row">
+		<div className="absolute right-2  m-5 cursor-pointer">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				className="h-6 w-6 text-gray-500"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={3}
+				d="M6 18L18 6M6 6l12 12"
+				
+				/>
+			</svg>
+		</div>
+
         <div className="mx-auto flex items-center px-5 pt-1 md:p-8">
           <Image src={productDetails.IMAGE} alt={"prodcutImage"} width={400} height={400} />
         </div>
         <div className="relative p-8 md:w-4/6">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col mt-5 md:flex-row">
             <h2 className="mb-2 text-2xl font-black">{productDetails.TITLE}</h2>
             {/* <span className="ml-2 text-xs uppercase">Tailwind</span> */}
           </div>
@@ -138,12 +156,12 @@ export default function CardComponent({ data }) {
 <style jsx>{`
   .description-wrapper {
     max-height: 150px; /* Set a maximum height for the description */
-    overflow: hidden;
+    overflow: wrap;
   }
   /* Add ellipsis for overflow text if needed */
   .description-wrapper p {
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: wrap;
     overflow: hidden;
   }
 `}</style>

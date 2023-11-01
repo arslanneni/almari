@@ -1,26 +1,30 @@
 import React from "react";
 import Modal from "react-modal";
 const customStyles = {
-    content: {
-      top: "50%", // Adjust as needed
-      left: "50%", // Adjust as needed
-      right: "auto",
-      bottom: "auto",
-      transform: "translate(-50%, -50%)",
-      width: "80%", // Increase the width as needed
-      height: "90vh", // Increase the height as needed (e.g., 70% of the viewport height)
-      padding: "0px",
-      overflowY: "auto",
-      overflowX: "hidden",
-      backgroundColor: "#f7f7f7",
-      border: "none", // Remove border if not needed
-    },
-    overlay: {
-      backgroundColor: "rgba(175, 175, 175, 0.80)",
-      zIndex: 1000,
-    },
-  };
-  
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    transform: "translate(-50%, -50%)",
+    width: "60%", // Increase the width as needed
+    height: "match-content", // Set height to 100% to match the main div
+    maxHeight: "90vh", // Set a maximum height if needed
+    padding: "0px",
+    backgroundColor: "#f7f7f7",
+    border: "2px",
+    display: "flex",
+    // overflowX: "hidden",
+    // overflowY:"wrap",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  // overlay: {
+  //   backgroundColor: "rgba(175, 175, 175, 0.9)",
+  //   zIndex: 1000,
+  // },
+};
+
 
 
 export default function PrimaryModal({ isOpenProp, children }) {
