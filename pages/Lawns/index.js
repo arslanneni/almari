@@ -25,7 +25,7 @@ export default function Lawns ()  {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('/beechtree.csv'); // Replace with the path to your CSV file
+      const response = await fetch('/bechtree.csv'); // Replace with the path to your CSV file
       const blob = await response.blob();
       const reader = new FileReader();
 
