@@ -36,81 +36,89 @@ export default function CardComponent({ data }) {
   return (
 	<>
 	  <div className="card-container">
-		{data.map((item, index) => (
-		  <div key={index} className="card">
-			<div className="image-container">
-			  <Image src={item.image} alt={item.title} width={200} height={200} />
-			</div>
-			<h4>Price: {item.price}</h4>
-			{/* <button
-			  onClick={() => viewProductDetails(item.title, item.description, item.price, item.image)}
-			  href={item.itemLink}
-			  className="view-item-link"
-			>
-			  View Item
-			</button> */}
-			<button className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md bg-emerald-400 py-2 px-8 text-center text-white transition duration-150 ease-in-out hover:translate-y-1 hover:bg-emerald-500" 
-			 onClick={() => viewProductDetails(item.title, item.description, item.price, item.image)}
-			 href={item.itemLink}
-			>
-              
-              View Item
-            </button>
-		  </div>
-		))}
-	  </div>
-	  <style jsx>{`
-		.card-container {
-		  display: flex;
-		  flex-wrap: wrap;
-		  justify-content: center;
-		}
-		h4 {
-			margin-top: 20px;
-			font-size: 20px;
-			font-weight: bold;
-		  }
-		.card {
-		  border: 1px solid #ddd;
-		  border-radius: 10px;
-		  padding: 20px;
-		  margin: 20px;
-		  width: 250px;
-		  height: 300px; 
-		  display: flex;
-		  flex-direction: column;
-		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		  transition: 0.3s;
-		}
-		.card:hover {
-		  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-		  transform: scale(1.05); /* Add a smooth scale effect on hover */
-		}
-		.image-container {
-		  width: 100%;
-		  height: 200px;
-		  border-radius: 10px;
-		  overflow: hidden;
-		}
-		.card h4 {
-		  margin-top: 10px;
-		  color: #555;
-		}
-		.view-item-link {
-		  width: 50%;
-		  text-align: center;
-		  padding: 10px 0;
-		  background-color: #4caf50;
-		  color: white;
-		  text-decoration: none;
-		  border-radius: 5px;
-		  display: block;
-		  margin: 20px auto 0;
-		}
-	  `}</style>
+  {data.map((item, index) => (
+    <div key={index} className="card">
+      <div className="image-container">
+        <Image src={item.image} alt={item.title} width={200} height={200} />
+      </div>
+      <h4 className="item-price">Price: {item.price}</h4>
+      <button
+        className="view-item-button"
+        onClick={() => viewProductDetails(item.title, item.description, item.price, item.image)}
+      >
+        View Item
+      </button>
+    </div>
+  ))}
+</div>
+<style jsx>{`
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  .image-container {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+  .item-title {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  .item-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    height: 60px;
+    overflow: hidden;
+  }
+  .item-price {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .view-item-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .view-item-button:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+  }
+`}</style>
+
 	<PrimaryModal isOpenProp={productDetailModal}>
   <section className="w-screen">
-	<div className="m-5 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-gray-600 shadow-md">
+	<div className="m-5 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-gray-600 ">
 	  <div className="relative flex h-full flex-col text-gray-600 md:flex-row">
 		<div className="absolute right-2  m-5 cursor-pointer">
 			<svg
