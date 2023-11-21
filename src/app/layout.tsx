@@ -27,6 +27,7 @@ export default function RootLayout({
  
   return (
     <main>
+   
         <HeaderTop />
         <HeaderMain />
         <Navbar />

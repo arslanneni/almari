@@ -1,147 +1,128 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import Image from "next/image";
 
-export default function Signup() {
-  const styles = {
-    container: {
-      display: 'flex',
-      minHeight: '80vh',
-      flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      padding: '2rem',
-    },
-    logo: {
-      display: 'block',
-      margin: '0 auto',
-      height: '2.5rem',
-      width: 'auto',
-    },
-    heading: {
-      marginTop: '2rem',
-      textAlign: 'center',
-      fontSize: '1.25rem',
-      fontWeight: 'bold',
-      color: '#333',
-    },
-    form: {
-      marginTop: '2rem',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1rem',
-    },
-    label: {
-      fontSize: '0.875rem',
-      fontWeight: 'bold',
-      color: '#333',
-    },
-    input: {
-      width: '100%',
-      borderRadius: '0.25rem',
-      padding: '0.375rem',
-      border: '1px solid #ccc',
-      color: '#333',
-      boxShadow: 'none',
-      placeholder: {
-        color: '#666',
-      },
-      focus: {
-        ringWidth: '2px',
-        ringOffset: '2px',
-        ringColor: 'indigo',
-      },
-    },
-    button: {
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      borderRadius: '0.25rem',
-      padding: '0.375rem 1.5rem',
-      fontSize: '0.875rem',
-      fontWeight: 'bold',
-      color: 'white',
-      backgroundColor: 'indigo',
-      boxShadow: 'none',
-      hover: {
-        backgroundColor: 'indigo',
-      },
-    },
-    forgotPassword: {
-      fontSize: '0.875rem',
-      fontWeight: 'bold',
-      color: 'indigo',
-      hover: {
-        color: 'darkblue',
-      },
-    },
-    signUpLink: {
-      marginTop: '1rem',
-      fontSize: '0.875rem',
-      fontWeight: 'bold',
-      color: 'indigo',
-      hover: {
-        color: 'darkblue',
-      },
-    },
+const Signup = () => {
+  useEffect(() => {
+    import("bootstrap/dist/css/bootstrap.min.css");
+
+    import("bootstrap/dist/js/bootstrap.bundle.min.js").then(() => {});
+  }, []);
+
+  const handleLogin = () => {
+    window.location.href = "http://localhost:3000/Login";
   };
-
   return (
     <>
-      <div style={styles.container}>
-        <img
-          style={styles.logo}
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          alt="Your Company"
-        />
-        <h2 style={styles.heading}>Sign in to your account</h2>
-        <form style={styles.form} action="#" method="POST">
-          <div>
-            <label style={styles.label} htmlFor="email">
-              Email address
-            </label>
-            <div>
-              <input
-                style={styles.input}
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                placeholder="Enter your email"
-              />
+      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+        <div className="container h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col-lg-12 col-xl-11">
+              <div className="card text-black" style={{ borderRadius: "25px" }}>
+                <div className="card-body p-md-5">
+                  <div className="row justify-content-center">
+                    <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                      <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                        Sign up
+                      </p>
+
+                      <form className="mx-1 mx-md-4">
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="text"
+                              id="form3Example1c"
+                              className="form-control"
+                            />
+                            <label className="form-label" for="form3Example1c">
+                              Your Name
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="email"
+                              id="form3Example3c"
+                              className="form-control"
+                            />
+                            <label className="form-label" for="form3Example3c">
+                              Your Email
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="password"
+                              id="form3Example4c"
+                              className="form-control"
+                            />
+                            <label className="form-label" for="form3Example4c">
+                              Password
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              type="password"
+                              id="form3Example4cd"
+                              className="form-control"
+                            />
+                            <label className="form-label" for="form3Example4cd">
+                              Repeat your password
+                            </label>
+                          </div>
+                        </div>
+
+                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-lg"
+                          >
+                            Register
+                          </button>
+                        </div>
+                        <p
+                          className="mb-5 pb-lg-2"
+                          style={{ color: "#393f81" }}
+                        >
+                          Already have an account?{" "}
+                          <a
+                            href="#"
+                            onClick={handleLogin}
+                            style={{ color: "#393f81" }}
+                          >
+                            Login here
+                          </a>
+                        </p>
+                      </form>
+                    </div>
+                    <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      <Image
+                        src="/SignupImage.jpeg"
+                        width={400}
+                        height={400}
+                        className="img-fluid"
+                        alt="Sample image"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div>
-            <div style={{ ...styles.label, display: 'flex', justifyContent: 'space-between' }}>
-              Password
-              <a style={styles.forgotPassword} href="#">
-                Forgot password?
-              </a>
-            </div>
-            <div>
-              <input
-                style={styles.input}
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                placeholder="Enter your password"
-              />
-            </div>
-          </div>
-          <div>
-            <button type="submit" style={styles.button}>
-              Sign in
-            </button>
-          </div>
-        </form>
-        <p style={styles.signUpLink}>
-          Not a member?{' '}
-          <a href="#" style={styles.signUpLink}>
-            Start a 14-day free trial
-          </a>
-        </p>
-      </div>
+        </div>
+      </section>
     </>
   );
-}
+};
+
+export default Signup;
