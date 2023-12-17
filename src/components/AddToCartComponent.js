@@ -1,4 +1,4 @@
-// components/AddToCartComponent.js
+
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import PrimaryModal from '../components/productDetailModal';
