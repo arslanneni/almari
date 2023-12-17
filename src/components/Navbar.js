@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import {scrappedDataService} from "../../services/dataFetching"
 
 export default function Navbar  ()  {
 
