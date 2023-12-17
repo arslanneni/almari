@@ -24,7 +24,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
       <HeaderTop />
-
+      <HeaderMain />
+      <Navbar />
       <MobNavbar />
       {children}
       <Footer />

@@ -1,7 +1,9 @@
 
 export const almariService={
 	loginCustomer,
-	signupCustomer
+	signupCustomer,
+	addToCart,
+	getCartItems
 }
 
 const almariURL='http://localhost:3001/';
@@ -29,6 +31,46 @@ async function loginCustomer(params)
 
 async function signupCustomer(params){
 	let apiUrl=`${almariURL}user/signup`
+	const postOptions = {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(
+		  params
+		),
+	  };
+	  
+	  try {
+		const data = await fetchData(apiUrl, postOptions);
+		return data;
+	  } catch (error) {
+		console.error('Error posting data:', error);
+	  }
+}
+
+async function addToCart(params){
+	let apiUrl=`${almariURL}user/addToCart`
+	const postOptions = {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(
+		  params
+		),
+	  };
+	  
+	  try {
+		const data = await fetchData(apiUrl, postOptions);
+		return data;
+	  } catch (error) {
+		console.error('Error posting data:', error);
+	  }
+}
+
+async function getCartItems(params){
+	let apiUrl=`${almariURL}user/getCart`
 	const postOptions = {
 		method: 'POST',
 		headers: {

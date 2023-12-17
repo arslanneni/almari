@@ -2,6 +2,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import PrimaryModal from '../components/productDetailModal';
+import Cookies from 'js-cookie';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { almariService } from '../../services/customer';
 
 export default function CardComponent({ data }) {
 	const initialState=
@@ -31,6 +35,36 @@ export default function CardComponent({ data }) {
   const handleCloseModal = () => 
   {
   	setProductDetailModal(false);
+  }
+
+  const handleAddToCart = async () => 
+  {
+    const username=Cookies.get('user');
+
+    const payload={
+      TITLE:productDetails?.TITLE,
+      PRICE:productDetails?.PRICE,
+      IMAGE:productDetails?.IMAGE,
+      ITEMLINK:productDetails?.ITEMLINK,
+      DESCRIPTION:productDetails?.DESCRIPTION,
+      SKUCODE:productDetails?.SKUCODE,
+      USERNAME:username
+    }
+
+    const response = await almariService.addToCart(payload);
+
+    if(response)
+    {
+      if(response.status==="SUCCESS"){
+        toast.success("Added to cart");
+        setProductDetailModal(false);
+        return;
+      }
+      else{
+        toast.error("Something went wrong");
+        return;
+      }
+    }
   }
 
   return (
@@ -154,7 +188,7 @@ export default function CardComponent({ data }) {
 			{/* <span className="ml-2 text-xs uppercase">258 Sales</span> */}
 		  </div>
 		  <div className="mt-8 flex flex-col sm:flex-row">
-			<button className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md bg-emerald-400 py-2 px-8 text-center text-white transition duration-150 ease-in-out hover:translate-y-1 hover:bg-emerald-500">
+			<button onClick={handleAddToCart} className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md bg-emerald-400 py-2 px-8 text-center text-white transition duration-150 ease-in-out hover:translate-y-1 hover:bg-emerald-500">
 			  <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
 			  </svg>

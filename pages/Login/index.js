@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Cookies from 'js-cookie';
 import { almariService } from '../../services/customer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -55,7 +56,8 @@ const LoginPage = () => {
 		{
 		
 			if(response.status==="SUCCESS"){
-				toast.success("Login Successfull")
+				toast.success("Login Successfull");
+				Cookies.set("user", loginState.EMAIL, { expires: 7 }); // Expires in 7 days
 				handleLogin();
 			  }
 			  else{

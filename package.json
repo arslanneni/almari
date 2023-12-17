@@ -19,6 +19,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "fs": "^0.0.1-security",
+    "js-cookie": "^3.0.5",
     "next": "13.4.12",
     "papaparse": "^5.4.1",
     "postcss": "8.4.27",

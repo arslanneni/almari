@@ -2,24 +2,24 @@ import React from "react";
 
 import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 
-export default function HeaderTop  ()  {
+const HeaderTop = () => {
   return (
     <div className="border-b border-gray-200 hidden sm:block">
       <div className="container py-4">
         <div className="flex justify-between items-center">
           <div className="hidden lg:flex gap-1">
             <div className="header_top__icon_wrapper">
-              <BsFacebook />
+            <a href="https://www.facebook.com/hafsa.bloch111113?mibextid=hIlR13" target="_blank" rel="noopener noreferrer">
+                <BsFacebook />
+              </a>
             </div>
-            <div className="header_top__icon_wrapper">
-              <BsTwitter />
+            
+            <div className="header_top__icon_wrapper" >
+            <a href="https://www.instagram.com/umm_e_hafsa___?igshid=YzVkODRmOTdmMw==" target="_blank" rel="noopener noreferrer">
+                <BsInstagram />
+              </a>
             </div>
-            <div className="header_top__icon_wrapper">
-              <BsInstagram />
-            </div>
-            <div className="header_top__icon_wrapper">
-              <BsLinkedin />
-            </div>
+          
           </div>
 
           {/* <div className="text-gray-500 text-[12px]">
@@ -51,3 +51,5 @@ export default function HeaderTop  ()  {
     </div>
   );
 };
+
+export default HeaderTop;
