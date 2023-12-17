@@ -70,9 +70,9 @@ const LoginPage = () => {
 	}
 
 	return (
-		<Layout>
-				<section className="vh-100" style={{ backgroundColor: '#FFFFFF' }}>
-			<ToastContainer/>
+		// <Layout>
+		// 		<section className="vh-100" style={{ backgroundColor: '#FFFFFF' }}>
+		// 	<ToastContainer/>
 			<div className="container py-5 h-100">
 				<div className="row d-flex justify-content-center align-items-center h-100">
 					<div className="col col-xl-10">
@@ -155,9 +155,10 @@ const LoginPage = () => {
 						</div>
 					</div>
 				</div>
+				<ToastContainer/>
 			</div>
-		</section>
-		</Layout>
+		// </section>
+		// </Layout>
 	
 	);
 };
