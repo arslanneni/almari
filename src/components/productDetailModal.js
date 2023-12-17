@@ -14,10 +14,12 @@ const customStyles = {
     backgroundColor: "#f7f7f7",
     border: "2px",
     display: "flex",
+    
     // overflowX: "hidden",
     // overflowY:"wrap",
     justifyContent: "center",
     alignItems: "center",
+     boxShadow: "0 8px 8px rgba(0, 0, 0, 0.1)", // Add the box shadow here
   },
   // overlay: {
   //   backgroundColor: "rgba(175, 175, 175, 0.9)",
