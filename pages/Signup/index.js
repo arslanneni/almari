@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Layout from '../../src/app/layout'
+import { almariService } from "../../services/customer";
 const Signup = () => {
 
 	const initialState = 
@@ -21,20 +22,35 @@ const Signup = () => {
 	const handleLogin = () => {
 		window.location.href = "http://localhost:3000/Login";
 	};
+
 	const signupUser = async () => 
 	{
-	
-		toast.error('Fill Data');
+		if(fields.FIRST_NAME==="" || fields.LAST_NAME==="" || fields.age==="" || fields.GENDER==="" || fields.CITY==="" || fields.EMAIL==="" || fields.PASSWORD==="")
+		{
+			toast.error("Please fill all the fields");
+			return;
+		}
 		const payload = 
 		{
 			FIRSTNAME:fields.FIRST_NAME,
-	LASTNAME:fields.LAST_NAME,
-	AGE:fields.AGE,
-	CITY:fields.CITY,
-	GENDER:fields.EMAIL,
-	EMAIL:fields.EMAIL,
-	PASSWORD:fields.PASSWORD
-	}
+			LASTNAME:fields.LAST_NAME,
+			AGE:+fields.AGE,
+			CITY:fields.CITY,
+			GENDER:fields.GENDER,
+			EMAIL:fields.EMAIL,
+			PASSWORD:fields.PASSWORD
+		}
+		const response = await almariService.signupCustomer(payload);
+
+		if (response){
+			if(response.status==="SUCCESS"){
+				toast.success("Signup Successfull")
+				handleLogin();
+			  }
+			  else{
+				toast.error(response.message);
+			  }
+		}
 	
 	}
 	const handleInput = (e) => 
@@ -105,7 +121,7 @@ const Signup = () => {
 													<i className="fas fa-lock fa-lg me-3 fa-fw"></i>
 													<div className="form-outline flex-fill mb-0">
 														<input
-															type="text"
+															type="number"
 															name="AGE"
 															onChange={handleInput}
 															id="form3Example4c"

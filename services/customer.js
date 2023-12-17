@@ -1,21 +1,42 @@
 
 export const almariService={
-	loginCustomer
+	loginCustomer,
+	signupCustomer
 }
 
-const almariURL='http://localhost:3009/';
+const almariURL='http://localhost:3001/';
 
 async function loginCustomer(params)
 {
-	let apiUrl=`${almariURL}almari/login`
+	let apiUrl=`${almariURL}user/login`
 	const postOptions = {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({
+		body: JSON.stringify(
 		  params
-		}),
+		),
+	  };
+	  
+	  try {
+		const data = await fetchData(apiUrl, postOptions);
+		return data;
+	  } catch (error) {
+		console.error('Error posting data:', error);
+	  }
+}
+
+async function signupCustomer(params){
+	let apiUrl=`${almariURL}user/signup`
+	const postOptions = {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(
+		  params
+		),
 	  };
 	  
 	  try {

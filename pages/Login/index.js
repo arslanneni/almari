@@ -30,7 +30,6 @@ const LoginPage = () => {
 		window.location.href = 'http://localhost:3000/';
 	};
 	
-	
 	const handleInputChange =(event)=>
 	{
 		setLoginState({
@@ -39,18 +38,33 @@ const LoginPage = () => {
 		  });
 	}
 
-
 	const checkLogin = async ()=>
 	{
-		const response=await almariService.loginCustomer({
-			USERID:loginState.USERID,
+		if(loginState.EMAIL==="" || loginState.PASSWORD===""){
+			toast.error("Please fill all the fields");
+			return;
+		}
+
+		const payload={
+			EMAIL:loginState.EMAIL,
 			PASSWORD:loginState.PASSWORD,
-		  });
-		  
-		  if(response.status==="SUCCESS"){
-			toast.success(response.message)
-			handleLogin()
-		  }
+		}
+
+		const response=await almariService.loginCustomer(payload);
+		if(response)
+		{
+		
+			if(response.status==="SUCCESS"){
+				toast.success("Login Successfull")
+				handleLogin();
+			  }
+			  else{
+				toast.error("Invalid Credentials")
+			  }
+		}
+		else{
+			toast.error("Login Failed")
+		}
 	}
 
 	return (

@@ -89,7 +89,7 @@ const ProductCard: React.FC<propsType> = ({
       </div>
 
       <div className="space-y-2 py-2">
-        <h2 className="text-accent font-medium uppercase">{title}</h2>
+        <h2 className="text-black-500 font-medium uppercase">{title}</h2>
         <p className="text-gray-500 max-w-[150px]">{desc}</p>
         <div>{generateRating(rating)}</div>
 
