@@ -4,10 +4,6 @@ import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 
 const HeaderTop = () => {
 
-	const logoutUser = () => {
-		
-		console.log("Logout clicked");
-	};
 
 	return (
 		<div className="border-b border-gray-200 hidden sm:block">
