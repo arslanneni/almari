@@ -56,19 +56,18 @@ const HeaderTop = () => {
 
 						{/* Add the logout icon */}
 						<button
-  style={{
-    width: 'auto',
-    padding: '5px 10px',
-    fontSize: '12px',
-    cursor: 'pointer', 
-    userSelect: 'none', 
-  }}
-  type="button"
-  className="btn btn-primary"
-  onClick={logoutUser}
->
-  Logout
-</button>
+							style={{
+								width: 'auto',
+								padding: '5px 10px',
+								fontSize: '12px',
+								cursor: 'pointer', 
+								userSelect: 'none', 
+							}}
+							type="button"
+							className="btn btn-primary"
+							>
+								<a href="/Login" >Logout</a>
+							</button>
 
 
 					</div>

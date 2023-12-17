@@ -20,6 +20,13 @@ const LoginPage = () => {
 		import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
 		});
 	}, []);
+
+	useEffect(() => {
+		const username=Cookies.get('user');
+		if(username){
+			Cookies.remove('user');
+		}
+	}, []);
 	
 	const handleRegistration = () => 
 	{
